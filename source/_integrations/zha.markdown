@@ -258,14 +258,14 @@ Note that the `otau_directory` setting is optional and can be used for any firmw
 service: zha.issue_zigbee_cluster_command
 data:
   ieee: "xx:xx:xx:xx:xx:xx:xx:xx"
-  endpoint_id: 1
+  endpoint_id: 1 # Endpoint id for the OTA cluster.
   cluster_id: 25
   cluster_type: out
   command: 0
   command_type: client
-  args:
-    - 0
-    - 100
+  params:
+    payload_type: 0
+    query_jitter: 100
 ```
 
 Note: `cluster_id: 25` may also be `cluster_id: 0x0019`. The two are synonymous.
